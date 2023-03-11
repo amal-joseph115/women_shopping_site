@@ -29,12 +29,12 @@ header{
 nav {
     flex: 0 0 100%;
     max-width: 100%; 
-    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 header nav {
+    min-height: 40px;
     background-color: ivory;
 }
 .nav-list {
@@ -81,6 +81,7 @@ header nav {
     align-items: center;
     justify-content: center;
     width: 100%;
+    flex-wrap: wrap;
 }
 .image{
     width: 50%;
@@ -99,6 +100,9 @@ header nav {
     flex-wrap: wrap;
     border: 2px solid #fce3ed;
 }
+.product-wrapper {
+    flex: 0 0 20%;
+}
 .product-wrapper:hover{ 
     border-color: deeppink;
 }
@@ -116,9 +120,9 @@ header nav {
     text-align: center;
     margin: 4px;
 }
-.collections {
+/* .collections {
     padding-bottom: 20px;
-}
+} */
 .collection-info p{
     width: 100%;
     text-align: center;
@@ -126,6 +130,10 @@ header nav {
 }
 .collection-wrapper img {
     width: 100%;
+}
+.collection-wrapper {
+    flex: 0 0 90%;
+    margin-bottom: 20px;
 }
 
 
@@ -161,6 +169,7 @@ footer .social-icon {
     align-items: center;
     justify-content: center;
     background-color: white;
+    flex-wrap: wrap;
 }
 .promo-content, .social-media {
     display: flex;
@@ -181,4 +190,44 @@ footer .social-icon {
     margin: 0;
     text-align: center;
 }
+@media screen and (min-width:601px) and (max-width:960px) {
+    .product-wrapper {
+        flex: 0 0 42%;
+        margin-bottom: 20px;
+    }
+}
+@media screen and (min-width:961px) {
+    .collection-wrapper {
+        flex: 0 0 45%;
+        margin-bottom: 0;
+    }
+    .collections {
+        margin-bottom: 20px;
+    }
+}
+@media screen and (min-width: 360px) and (max-width:600px) {
+    .product-wrapper {
+        flex: 0 0 90%;
+        margin-bottom: 20px;
+    }
+}
 
+@media screen and (max-width:650px) {
+    footer ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    footer li {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:430px) {
+    header ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    header li {
+        width: 100%;
+    }
+}
