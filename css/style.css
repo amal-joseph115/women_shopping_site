@@ -28,12 +28,14 @@ header{
 }
 nav {
     flex: 0 0 100%;
-    max-width: 100%;
-    background-color: ivory; 
+    max-width: 100%; 
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+header nav {
+    background-color: ivory;
 }
 .nav-list {
     padding: 0;
@@ -128,17 +130,55 @@ nav {
 
 
 footer{
-    height: 10%;
-    font-size: 40px;
-    padding-left: 20px;
-    font-style: oblique;
-    font-family: serif;
-    margin-top: 10px;
-    background-color: lightgrey;
+    width: 100%;
+    background-color: #fc2779;
+    color: #ffffff;
+}
+footer nav {
+    background-color: #fc2779;
+    padding-top: 10px;
+}
+footer .nav-list li {
+    color: #ffffff;
+}
+.copy-right {
+    text-align: center;
+}
+.copy-right p {
+    margin: 0;
+    padding-bottom: 20px;
+}
+footer .icon {
+    height: 40px;
+    width: 40px;
+}
+footer .social-icon {
+    height: 24px;
+    width: 24px;
+}
+.footer-promo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.promo-content, .social-media {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    color: #fc2779 ;
+}
+.promo-content span {
+    margin-left: 8px;
+} 
+.social-media {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 24px;
+}
+.social-media p {
+    width: 100%;
+    margin: 0;
+    text-align: center;
 }
 
-@media screen and (min-width:320px) and (max-width:600px) {
-    #footer {
-        font-size: 24px;
-    }
-}
