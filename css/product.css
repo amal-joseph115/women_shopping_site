@@ -65,78 +65,6 @@ header nav {
     display: flex;
     flex-wrap: wrap;
 }
-.herobanner{
-    width:100%;
-    min-height: 240px;
-}
-.herobanner img{
-    width:100%;
-    height: 100%;
-    margin: auto;
-}
-.popular-products,.our-collections {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.products,.collections {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    flex-wrap: wrap;
-}
-.image{
-    width: 50%;
-}
-.popular-products h2,.our-collections h2 {
-    text-transform: uppercase;
-    font-family: cursive;
-    color: #ed40a8;
-}
-.product-wrapper,.collection-wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fce3ed;
-    margin: 0 20px;
-    flex-wrap: wrap;
-    border: 2px solid #fce3ed;
-}
-.product-wrapper {
-    flex: 0 0 20%;
-}
-.product-wrapper:hover{ 
-    border-color: deeppink;
-}
-
-.product-info {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: white;
-}
-.product-info p {
-    width: 100%;
-    text-align: center;
-    margin: 4px;
-}
-.collection-info p{
-    width: 100%;
-    text-align: center;
-    margin: 4px;
-}
-.collection-wrapper img {
-    width: 100%;
-}
-.collection-wrapper {
-    flex: 0 0 90%;
-    margin-bottom: 20px;
-}
 
 
 footer{
@@ -192,27 +120,6 @@ footer .social-icon {
     margin: 0;
     text-align: center;
 }
-@media screen and (min-width:601px) and (max-width:960px) {
-    .product-wrapper {
-        flex: 0 0 42%;
-        margin-bottom: 20px;
-    }
-}
-@media screen and (min-width:961px) {
-    .collection-wrapper {
-        flex: 0 0 45%;
-        margin-bottom: 0;
-    }
-    .collections {
-        margin-bottom: 20px;
-    }
-}
-@media screen and (min-width: 360px) and (max-width:600px) {
-    .product-wrapper {
-        flex: 0 0 90%;
-        margin-bottom: 20px;
-    }
-}
 
 @media screen and (max-width:650px) {
     footer ul {
@@ -236,7 +143,7 @@ footer .social-icon {
     header li {
         width: 100%;
     }
-    header .nav-list li:hover, .selected {
+    header .nav-list li:hover,.selected {
         border-bottom: 0;
         padding-bottom: 10px;
         color: #950953;
