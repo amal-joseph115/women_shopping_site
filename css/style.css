@@ -236,7 +236,7 @@ footer .social-icon {
     header li {
         width: 100%;
     }
-    header .nav-list li:hover, .selected {
+    header .nav-list li:hover:not(.selected), li.selected {
         border-bottom: 0;
         padding-bottom: 10px;
         color: #950953;
