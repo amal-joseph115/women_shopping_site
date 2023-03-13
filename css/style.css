@@ -112,6 +112,9 @@ a {
 .product-wrapper {
     flex: 0 0 20%;
 }
+.collection-wrapper:hover {
+    border: 2px solid deeppink;
+}
 .product-wrapper:hover{ 
     border-color: deeppink;
 }
