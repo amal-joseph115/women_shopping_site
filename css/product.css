@@ -94,6 +94,16 @@ header nav {
     border: 2px solid #fce3ed;
     flex: 0 0 20%;
     cursor: pointer;
+    border-radius: 10px;
+}
+.back-to-top {
+    position: fixed;
+    height: 50px;
+    bottom: 30px;
+    right: 8px;
+    background: darkcyan;
+    border-radius: 30px;
+    opacity: 0.6;
 }
 .product-wrapper:hover{ 
     border-color: deeppink;

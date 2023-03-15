@@ -148,8 +148,7 @@ header nav {
     flex-wrap: wrap;
     border: 2px solid #fce3ed;
     cursor: pointer;
-}
-.product-wrapper {
+    border-radius: 10px;
     flex: 0 0 20%;
 }
 .product-wrapper:hover{ 

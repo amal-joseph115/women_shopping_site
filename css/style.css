@@ -111,6 +111,8 @@ a {
 }
 .product-wrapper {
     flex: 0 0 20%;
+    position: relative;
+    border-radius: 10px;
 }
 .collection-wrapper:hover {
     border: 2px solid deeppink;
@@ -118,19 +120,34 @@ a {
 .product-wrapper:hover{ 
     border-color: deeppink;
 }
-
+.product-wrapper .best-seller {
+    width: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 .product-info {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: white;
+    padding: 4px;
 }
 .product-info p {
     width: 100%;
-    text-align: center;
     margin: 4px;
+    font-family: Circular,sans-serif;
+}
+.product-info .name {
+    color: lightslategray;
+}
+.product-info .info-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+img.review {
+    height: 16px;
+    width: 16px;
 }
 .collection-info p{
     width: 100%;
