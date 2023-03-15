@@ -121,7 +121,7 @@ a {
     border-color: deeppink;
 }
 .product-wrapper .best-seller {
-    width: 100px;
+    width: 80px;
     position: absolute;
     top: 0;
     right: 0;
@@ -221,6 +221,17 @@ footer .social-icon {
         flex: 0 0 42%;
         margin-bottom: 20px;
     }
+
+}
+@media screen and (min-width:601px) and (max-width: 750px) {
+    .product-wrapper .best-seller {
+        width: 80px;
+    }  
+}
+@media screen and (min-width: 961px) and (max-width: 1440px) {
+    .product-wrapper .best-seller {
+        width: 64px;
+    }  
 }
 @media screen and (min-width:961px) {
     .collection-wrapper {
