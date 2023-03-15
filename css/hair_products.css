@@ -92,7 +92,7 @@ header nav {
     margin: 0 15px;
     flex-wrap: wrap;
     flex: 0 0 15%;
-    max-width: 20%;
+    max-width: 15%;
     padding: 10px;
     cursor: pointer;
 }
