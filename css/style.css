@@ -97,7 +97,7 @@ a {
 }
 .popular-products h2,.our-collections h2 {
     text-transform: uppercase;
-    font-family: cursive;
+    font-family: 'Sono';
     color: #ed40a8;
 }
 .product-wrapper,.collection-wrapper{
