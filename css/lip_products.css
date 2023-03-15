@@ -148,9 +148,6 @@ header nav {
     flex: 0 0 20%;
     border-radius: 10px;
 }
-.product-wrapper {
-    
-}
 .product-wrapper:hover{ 
     border-color: deeppink;
 }
