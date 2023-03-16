@@ -150,6 +150,7 @@ header nav {
     cursor: pointer;
     border-radius: 10px;
     flex: 0 0 20%;
+    box-shadow: 2px 5px lightpink;
 }
 .product-wrapper:hover{ 
     border-color: deeppink;

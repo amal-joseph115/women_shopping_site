@@ -113,6 +113,7 @@ a {
     flex: 0 0 20%;
     position: relative;
     border-radius: 10px;
+    box-shadow: 2px 5px lightpink;
 }
 .collection-wrapper:hover {
     border: 2px solid deeppink;
