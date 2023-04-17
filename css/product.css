@@ -41,6 +41,20 @@ header nav {
 .nav-list {
     padding: 0;
 }
+header .btn-group {
+    min-width: 154px;
+    height: 50px;
+}
+header .pink-btn, .product-wrapper .pink-btn {
+    background-color: deeppink;
+    border: none;
+}
+header .pink-btn:hover,.product-wrapper .pink-btn:hover {
+    background-color: #ed40a8;
+} 
+.nav-list ul {
+    margin-top:0;
+}
 .nav-list li{
     list-style: none;
     display: inline-block;
@@ -122,6 +136,9 @@ header nav {
     color: red;
     text-align: right;
 }
+.offer {
+    color: red;
+}
 .image{
     width: 100%;
 }
@@ -138,15 +155,21 @@ header nav {
     margin: 4px;
     font-family: Circular,sans-serif;
 }
-.product-info .name {
+.dialog-product-info p{
+    margin: 0 0 4px;
+}
+.product-info .name,.dialog-product-info .name {
     color: lightslategray;
 }
-.product-info .info-title {
+.product-info .info-title,.dialog-product-info .info-title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 img.review {
     height: 16px;
     width: 16px;
+}
+.modal-dialog-centered .modal-content{
+    background-color: #fff3f8;
 }
 footer{
     width: 100%;
