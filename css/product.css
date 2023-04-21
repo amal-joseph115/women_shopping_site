@@ -38,8 +38,12 @@ header nav {
     height: 40px;
     background-color: ivory;
 }
+header .search {
+    width: 300px;
+}
 .nav-list {
     padding: 0;
+    margin: 0;
 }
 header .btn-group {
     min-width: 154px;
@@ -85,6 +89,7 @@ header .pink-btn:hover,.product-wrapper .pink-btn:hover {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
 .popular-products h2 {
     text-transform: uppercase;

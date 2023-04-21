@@ -16,6 +16,9 @@ header{
     justify-content: center;
     flex-wrap: wrap;
 }
+header .search {
+    width: 300px;
+}
 .logo {
     flex: 0 0 100%;
     max-width: 100%;
@@ -38,8 +41,20 @@ header nav {
     height: 40px;
     background-color: ivory;
 }
+header .btn-group {
+    min-width: 154px;
+    height: 50px;
+}
+header .pink-btn, .product-wrapper .pink-btn {
+    background-color: deeppink;
+    border: none;
+}
+header .pink-btn:hover,.product-wrapper .pink-btn:hover {
+    background-color: #ed40a8;
+} 
 .nav-list {
     padding: 0;
+    margin: 0;
 }
 .nav-list li{
     list-style: none;
@@ -123,6 +138,7 @@ header nav {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
 .products {
     display: flex;
@@ -130,6 +146,9 @@ header nav {
     justify-content: center;
     width: 100%;
     flex-wrap: wrap;
+}
+.offer {
+    color: red;
 }
 .image{
     width: 100%;
@@ -181,14 +200,18 @@ header nav {
     margin: 4px;
     font-family: Circular,sans-serif;
 }
-.product-info .name {
+.dialog-product-info p{
+    margin: 0 0 4px;
+}
+.product-info .name,.dialog-product-info .name {
     color: lightslategray;
 }
-.product-info .info-title {
-    min-height: 35px;
+.product-info .info-title,.dialog-product-info .info-title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
+.modal-dialog-centered .modal-content{
+    background-color: #fff3f8;
+}
 
 footer{
     width: 100%;
@@ -247,10 +270,10 @@ img.review {
     margin: 0;
     text-align: center;
 }
-@media screen and (min-width:961px) and (max-width:1388px) {	
-    .clearance .price {	
-        max-width: 64px;	
-    }	
+@media screen and (min-width:961px) and (max-width:1388px) {
+    .clearance .price {
+        max-width: 64px;
+    }
 }
 @media screen and (max-width:650px) {
     .type-wrapper img {
