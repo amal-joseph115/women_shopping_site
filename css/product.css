@@ -41,6 +41,9 @@ header nav {
 header .search {
     width: 300px;
 }
+header .cart-btn {
+    height: 50px;
+}
 .nav-list {
     padding: 0;
     margin: 0;
@@ -53,8 +56,12 @@ header .pink-btn, .product-wrapper .pink-btn {
     background-color: deeppink;
     border: none;
 }
-header .pink-btn:hover,.product-wrapper .pink-btn:hover {
-    background-color: #ed40a8;
+header .pink-btn:hover,
+header .pink-btn:active,
+.product-wrapper .pink-btn:hover,
+.product-wrapper .pink-btn:active
+ {
+    background-color: #ed40a8 !important;
 } 
 .nav-list ul {
     margin-top:0;
@@ -102,6 +109,13 @@ header .pink-btn:hover,.product-wrapper .pink-btn:hover {
     justify-content: center;
     width: 100%;
     flex-wrap: wrap;
+}
+.total {
+    background-color: #f494c7;
+    margin: 0 -16px !important;
+}
+.cart-item {
+    border-bottom: lightgrey 1px solid;
 }
 .product-wrapper{
     display: flex;

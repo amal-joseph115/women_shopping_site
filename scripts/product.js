@@ -8,8 +8,14 @@ function getData() {
 function generateCartList() {
   const cartList = JSON.parse(sessionStorage.getItem("cartList")) || [];
   let itemList = "";
+  let totalPrice = 0.00;
   cartList.forEach((product) => {
-    itemList += `<div class="row">
+    totalPrice += (product.offer? parseFloat(product.offer) : parseFloat(product.price)) * parseFloat(product.count).toFixed(2);
+    itemList += `
+    <div class="row cart-item">
+      <div class="d-flex justify-content-end mt-2">
+        <button type="button" class="btn-close" aria-label="Close" onclick="removeItem(${product.productId})"></button>
+      </div>
       <img src=${
         product.imgSrc
       } alt="lipstick" title="lipstick" class="image col-5 p-3">
@@ -22,17 +28,28 @@ function generateCartList() {
             <img src="/images/star.svg" alt="star" title="star" class="review">
             <img src="/images/star.svg" alt="star" title="star" class="review">
         </p>
-        <p>Price: ${product.price}</p>
+        <p>Price: $${product.price}</p>
 
         ${
           product.offer
-            ? `<p class="offer">offer Price: ${product.offer}</p>`
+            ? `<p class="offer">offer Price: $${product.offer}</p>`
             : ""
-        }                    
+        }
+        <p>Item Count: ${product.count}</p>                    
       </div>
     </div>`;
   });
-  document.querySelector('#myCartBody').innerHTML = itemList;
+  const totalPriceHTML = `
+    <div class="row total align-items-center">
+      <p class="col-5 mb-0">Total Price:</p>
+      <p class="col-5 mb-0 py-2">$ ${totalPrice.toFixed(2)}</p> 
+    </div>
+  `;
+  const noItems = `
+    <div class="d-flex align-items-center justify-content-center py-3">
+      <p>No items in the cart</p>
+    </div>`;
+  document.querySelector('#myCartBody').innerHTML = cartList.length ? itemList + totalPriceHTML : noItems;
 }
 function generateProductList(data) {
   let prodListHtml = "";
@@ -106,7 +123,7 @@ function generateProductList(data) {
                                 }">Close</button>
                                 <button type="button" class="btn btn-danger" id="${
                                   product.productId
-                                }" onclick="buyProduct(event.target.attributes.id.value)">Pay & Buy</button>
+                                }" onclick="buyProduct(event.target.attributes.id.value)">Add to Cart</button>
                               </div>
                           </div>
                       </div>  
@@ -117,7 +134,6 @@ function generateProductList(data) {
   const element = document.querySelector("#products");
   element.innerHTML = prodListHtml;
 }
-
 function setDropdownValue(category) {
   let text = "";
   switch (category) {
@@ -169,7 +185,7 @@ function createProdListHTML(value, name) {
 function setProductNumber(newValue) {
   const currentCart = JSON.parse(sessionStorage.getItem("cartList")) || [];
   const cartElement = document.querySelector("#productNumber");
-  productNumber = currentCart.length +newValue;
+  productNumber = currentCart.length + newValue;
   if (cartElement) {
     cartElement.innerHTML = productNumber;
   }
@@ -195,4 +211,19 @@ function buyProduct(id) {
   productNumber += 1;
   
   document.querySelector(elemId).click();
+}
+function clearSession() {
+  sessionStorage.clear();
+}
+function removeItem(itemId) {
+  const cartList = JSON.parse(sessionStorage.getItem("cartList")) || [];
+  const newList = cartList.filter((item) => itemId.toString() !== item.productId);
+  sessionStorage.setItem("cartList", JSON.stringify(newList));
+  generateCartList();
+  setProductNumber(0);
+}
+function clearCart() {
+  sessionStorage.clear();
+  generateCartList();
+  setProductNumber(0);
 }
