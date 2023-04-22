@@ -1,9 +1,39 @@
 category = "";
 productList = [];
+productNumber = 0;
 function getData() {
   return fetch("../Data/products.json").then((response) => response.json());
 }
 
+function generateCartList() {
+  const cartList = JSON.parse(sessionStorage.getItem("cartList")) || [];
+  let itemList = "";
+  cartList.forEach((product) => {
+    itemList += `<div class="row">
+      <img src=${
+        product.imgSrc
+      } alt="lipstick" title="lipstick" class="image col-5 p-3">
+      <div class="dialog-product-info col-5 mt-4 ml-2">
+        <p class="name">${product.product}</p>
+        <p class="info-title">${product.productInfo}</p>
+        <p>
+            Rating: 
+            <img src="/images/star.svg" alt="star" title="star" class="review">
+            <img src="/images/star.svg" alt="star" title="star" class="review">
+            <img src="/images/star.svg" alt="star" title="star" class="review">
+        </p>
+        <p>Price: ${product.price}</p>
+
+        ${
+          product.offer
+            ? `<p class="offer">offer Price: ${product.offer}</p>`
+            : ""
+        }                    
+      </div>
+    </div>`;
+  });
+  document.querySelector('#myCartBody').innerHTML = itemList;
+}
 function generateProductList(data) {
   let prodListHtml = "";
   data.forEach((product) => {
@@ -119,6 +149,7 @@ function setDropdownValue(category) {
 }
 function createProdListHTML(value, name) {
   category = value || category;
+  setProductNumber(0);
   if (category) {
     setDropdownValue(category);
   }
@@ -135,10 +166,33 @@ function createProdListHTML(value, name) {
     generateProductList(prodList);
   });
 }
-
+function setProductNumber(newValue) {
+  const currentCart = JSON.parse(sessionStorage.getItem("cartList")) || [];
+  const cartElement = document.querySelector("#productNumber");
+  productNumber = currentCart.length +newValue;
+  if (cartElement) {
+    cartElement.innerHTML = productNumber;
+  }
+}
 function buyProduct(id) {
   const product = productList.find((product) => product.productId === id);
+  const currentCart = JSON.parse(sessionStorage.getItem("cartList")) || [];
+  const prodIndex = currentCart.findIndex(
+    (item) => item.productId === product.productId
+  );
+  let productWithCount = {
+    ...product,
+    count: 1,
+  };
   const elemId = `#close-btn-${id}`;
-
+  if (prodIndex > -1) {
+    currentCart[prodIndex].count += 1;
+  } else {
+    currentCart.push(productWithCount);
+  }
+  setProductNumber(1);
+  sessionStorage.setItem("cartList", JSON.stringify(currentCart));
+  productNumber += 1;
+  
   document.querySelector(elemId).click();
 }
