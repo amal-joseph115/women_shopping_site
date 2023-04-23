@@ -212,9 +212,7 @@ function buyProduct(id) {
   
   document.querySelector(elemId).click();
 }
-function clearSession() {
-  sessionStorage.clear();
-}
+
 function removeItem(itemId) {
   const cartList = JSON.parse(sessionStorage.getItem("cartList")) || [];
   const newList = cartList.filter((item) => itemId.toString() !== item.productId);

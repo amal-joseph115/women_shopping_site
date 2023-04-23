@@ -38,9 +38,6 @@ header nav {
     height: 40px;
     background-color: ivory;
 }
-header .search {
-    width: 300px;
-}
 header .cart-btn {
     height: 50px;
 }
